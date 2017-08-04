@@ -1,11 +1,11 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="nav blog-nav">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">New features</a>
-            <a class="nav-link" href="#">Press</a>
-            <a class="nav-link" href="#">New hires</a>
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link active" href="/">All posts</a>
+            <a class="nav-link " href="/posts/create">Publish a Post</a>
+            <a class="nav-link" href="#">My Posts</a>
+            <a class="nav-link" href="#">My Info</a>
+            <a class="nav-link" href="#">My Comments</a>
         </nav>
     </div>
 </div>

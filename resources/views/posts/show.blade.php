@@ -19,8 +19,10 @@
         </div><!-- /.blog-post -->
     </div>
 
-    @if(count($post->comments))
-        <div class="form-control">
+
+    <hr>
+    <div class="form-control">
+        @if(count($post->comments))
             <div class="comments">
                 <ul class="list-group">
                     @foreach($post->comments as $comment)
@@ -30,6 +32,13 @@
                     @endforeach
                 </ul>
             </div>
-        </div>
-    @endif
+            <hr>
+        @endif
+        @include('comments.add')
+        @include('layouts.errors')
+    </div>
+
+
+
+
 @endsection

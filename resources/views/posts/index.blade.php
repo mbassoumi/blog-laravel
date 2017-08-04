@@ -7,9 +7,11 @@
             @include('posts.post')
         @endforeach
 
-        <nav class="blog-pagination">
-            <a class="btn btn-outline-primary" href="#">Older</a>
-            <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-        </nav><!-- /.blog-main -->
+        <div class="form-group text-center">
+            <a class="btn btn-outline-primary" href="/posts/create">Create New Post</a>
+        </div>
+    @include('layouts.pagination')
+
 
 @endsection
+

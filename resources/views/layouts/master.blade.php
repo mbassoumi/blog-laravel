@@ -19,29 +19,30 @@
 
 <body>
 
-@include('layouts.nav')
+    @include('layouts.nav')
 
-<div class="blog-header">
-    <div class="container">
-        <h1 class="blog-title">Bassoumi Blog</h1>
-        <p class="lead blog-description">An example blog template built by Majd Basem Bassoumi.</p>
-    </div>
-</div>
-
-<div class="container">
-
-    <div class="row">
-        <div class="col-sm-8 blog-main">
-            @yield('content')
+    <div class="blog-header">
+        <div class="container">
+            <h1 class="blog-title">Bassoumi Blog</h1>
+            <p class="lead blog-description">An example blog template built by Majd Basem Bassoumi.</p>
         </div>
+    </div>
 
-        @include('layouts.sidebar')
+    <div class="container">
 
-    </div><!-- /.row -->
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+                @yield('content')
+            </div>
 
-</div><!-- /.container -->
 
-@include('layouts.footer')
+            @include('layouts.sidebar')
+
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    @include('layouts.footer')
 
 
 </body>
