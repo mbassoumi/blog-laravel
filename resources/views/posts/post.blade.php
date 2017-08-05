@@ -10,7 +10,7 @@
             {{$post->created_at->toFormattedDateString()}}
             by
             <?php
-            $user = \App\User::find($post->id);
+            $user = \App\User::find($post->user_id);
             ?>
             <a href="/profile/{{$user->id}}">
                 {{$user->name}}

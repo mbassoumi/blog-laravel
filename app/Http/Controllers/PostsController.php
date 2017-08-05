@@ -43,8 +43,24 @@ class PostsController extends Controller
         return view('posts.show', compact('post'));
     }
 
-    public function update()
+    public function edit(Post $post)
     {
-        dd('a7a');
+
+        return view('posts.update', compact('post'));
     }
+
+    public function update(Post $post)
+    {
+        $post->title = request('title');
+        $post->body = request('body');
+        $post->save();
+        return redirect('/posts/'.$post->id);
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return redirect("/");
+    }
+
 }

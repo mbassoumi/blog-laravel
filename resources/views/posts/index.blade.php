@@ -4,6 +4,7 @@
 
 @section('content')
         @foreach($posts as $post)
+            {{--{{$post->title}}--}}
             @include('posts.post')
         @endforeach
 

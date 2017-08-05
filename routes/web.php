@@ -23,7 +23,11 @@ Route::get('/profile','UsersController@profile');
 Route::get('/profile/{user}','UsersController@user');
 
 
-Route::post('/posts/{post}/edit', 'PostsController@update');
+Route::get('/posts/{post}/edit', 'PostsController@edit');
+Route::patch('/posts/{post}/update', 'PostsController@update');
+
+Route::get('/posts/{post}/destroy', 'PostsController@destroy');
+
 
 Auth::routes();
 
