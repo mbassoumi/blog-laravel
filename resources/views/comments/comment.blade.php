@@ -3,7 +3,11 @@
         {{$comment->created_at->diffForHumans()}}
         by
         <a href="#">
-            a7a
+            <?php
+            $user = \App\User::find($comment->user_id);
+            $user = $user->name;
+            ?>
+            {{$user}}
         </a>
     </p>
     <p>{{$comment->body}}</p>

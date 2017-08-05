@@ -18,3 +18,12 @@ Route::get('/posts/{post}','PostsController@show');
 
 
 Route::post('/posts/{post}/comments', 'CommentsController@store');
+
+Route::get('/profile','UsersController@profile');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/logout','SessionsController@destroy');
