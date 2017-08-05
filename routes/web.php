@@ -20,7 +20,10 @@ Route::get('/posts/{post}','PostsController@show');
 Route::post('/posts/{post}/comments', 'CommentsController@store');
 
 Route::get('/profile','UsersController@profile');
+Route::get('/profile/{user}','UsersController@user');
 
+
+Route::post('/posts/{post}/edit', 'PostsController@update');
 
 Auth::routes();
 

@@ -9,12 +9,11 @@
         <p class="blog-post-meta">
             {{$post->created_at->toFormattedDateString()}}
             by
-            <a href="#">
-                <?php
-                    $user = \App\User::find($post->id);
-                    $user = $user->name;
-                ?>
-                {{$user}}
+            <?php
+            $user = \App\User::find($post->id);
+            ?>
+            <a href="/profile/{{$user->id}}">
+                {{$user->name}}
             </a>
         </p>
         <p>{{$post->body}}</p>
