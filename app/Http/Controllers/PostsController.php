@@ -23,18 +23,26 @@ class PostsController extends Controller
         return view('posts.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $this->validate(request(),[
             'title' => 'required',
             'body' => 'required',
         ]);
 
-        Post::create([
+        $post = Post::create([
             'title' => request('title'),
             'body' => request('body'),
             'user_id' => auth()->id(),
         ]);
+
+        if ($request->hasFile('photo')) {
+            foreach ($request->file('photo') as $file) {
+                $post->addMedia($file)->preservingOriginal()->toMediaCollection();
+            }
+        }
+
+
         return redirect('/');
     }
 

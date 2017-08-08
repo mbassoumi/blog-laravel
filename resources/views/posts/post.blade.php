@@ -16,7 +16,18 @@
                 {{$user->name}}
             </a>
         </p>
+        <?php
+        $media = $post->getMedia();
+        ?>
+        @if(emptyArray($media))
+            @foreach($media as $a7a)
+                <img src="{{$a7a->getUrl()}}" height="222" width="222">
+            @endforeach
+        @endif
         <p>{{$post->body}}</p>
+
+
+
     </div><!-- /.blog-post -->
 <hr>
 <hr>

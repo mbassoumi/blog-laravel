@@ -4,7 +4,7 @@
 @section('content')
     <h1>Publish post</h1>
     <hr>
-    <form method="POST" action="/posts">
+    <form method="POST" action="/posts" enctype='multipart/form-data'>
         {{csrf_field()}}
         <div class="form-group">
             <label for="title">Title</label>
@@ -17,6 +17,7 @@
         </div>
 
         <div class="form-group">
+            <input type="file" name="photo[]" multiple accept="image/* ">
             <button type="submit" class="btn btn-primary">Publish</button>
         </div>
     </form>

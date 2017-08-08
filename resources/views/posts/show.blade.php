@@ -20,6 +20,15 @@
             <p>
                 {{$post->body}}
             </p>
+
+            <?php
+                $media = $post->getMedia();
+                ?>
+            @if(emptyArray($media))
+                @foreach($media as $a7a)
+                    <img src="{{$a7a->getUrl()}}" height="222" width="222">
+                @endforeach
+            @endif
         </div><!-- /.blog-post -->
         <?php
             $user = \App\User::find($post->user_id);
