@@ -3,8 +3,13 @@
 namespace App;
 
 
-class Comment extends Model
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
+
+class Comment extends Model implements HasMedia
 {
+    use HasMediaTrait;
+
     public function post()
     {
         return $this->belongsTo(Post::class);
@@ -15,3 +20,4 @@ class Comment extends Model
         return $this->belongsTo(User::class);
     }
 }
+
